@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #fffbf7;
+  --foreground: #1c1917;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --input-bg: #ffffff;
+  --border: rgba(214, 211, 209, 0.6);
+  --accent: #f97316;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.06) 0px, transparent 50%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-stone-200 rounded-xl shadow-lg shadow-stone-900/5 transition-colors duration-300;
+  }
+  
+  .glass-input {
+    @apply bg-white border border-stone-200 text-stone-900 rounded-lg px-4 py-2 outline-none transition-all placeholder:text-stone-400 focus:ring-2 focus:ring-orange-500/40 focus:border-orange-400;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-orange-500 to-rose-500 hover:from-orange-600 hover:to-rose-600 text-white font-medium py-2 px-4 rounded-lg shadow-lg shadow-orange-500/20 hover:shadow-orange-500/30 transition-all active:scale-[0.98] border border-orange-500/20;
+  }
+
+  .btn-danger {
+    @apply text-rose-500 hover:text-rose-600 hover:bg-rose-50 p-2 rounded-lg transition-colors;
+  }
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: infinite-scroll 50s ease-in-out infinite;
+}
+
+.animate-marquee-reverse {
+  animation: infinite-scroll 50s ease-in-out infinite reverse;
 }
