@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-gradient-to-br from-orange-50/50 via-white to-rose-50/50">
       {/* Header */}
-      <header className="w-full sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-stone-200/60 shadow-sm">
+      <header className="w-full sticky                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-stone-200/60 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4 group">
             <div className="relative">
